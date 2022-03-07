@@ -1,11 +1,8 @@
 from django.urls import path
-from .views import BlacklistTokenUpdateView, PostList, PostDetail
-from .views import CustomUserCreate
+from .views import PostList
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = [
-    path('', PostList.as_view()),
-    path('<int:pk>/', PostDetail.as_view()),
-    path('create/', CustomUserCreate.as_view(), name="create_user"),
-    path('logout/blacklist/', BlacklistTokenUpdateView.as_view(),
-         name='blacklist')
-]
+
+router = DefaultRouter()
+router.register('', PostList, basename='post')
+urlpatterns = router.urls

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import Posts from './components/Post';
-import PostLoadingComponent from './components/PostLoading';
+import Posts from './components/posts';
+import PostLoadingComponent from './components/postLoading';
 
 function App() {
 	const PostLoading = PostLoadingComponent(Posts);
