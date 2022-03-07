@@ -11,7 +11,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import CustomUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
 
 
 class PostUserWritePermission(BasePermission):
@@ -35,21 +35,16 @@ class PostList(viewsets.ModelViewSet):
     def get_queryset(self):
         return Post.objects.all()
 
-# class PostList(viewsets.ViewSet):
-#     permission_classes = [IsAuthenticated]
-#     queryset = Post.postobjects.all()
+class PostListDetailfilter(generics.ListAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['^slug']
 
-#     def list(self, request):
-#         serializer_class = PostSerializer(self.queryset, many=True)
-#         return Response(serializer_class.data)
-
-#     def retrieve(self, request, pk=None):
-#         post = get_object_or_404(self.queryset, pk=pk)
-#         serializer_class = PostSerializer(post)
-#         return Response(serializer_class.data)
 
 class CustomUserCreate(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def post(self, request, format='json'):
         serializer = CustomUserSerializer(data=request.data)
@@ -61,7 +56,7 @@ class CustomUserCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class BlacklistTokenUpdateView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     authentication_classes = ()
 
     def post(self, request):
@@ -72,12 +67,3 @@ class BlacklistTokenUpdateView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
-            
-
-# class PostList(generics.ListCreateAPIView):
-#     queryset = Post.postobjects.all()
-#     serializer_class = PostSerializer
-    
-# class PostDetail(generics.RetrieveDestroyAPIView):
-#     queryset = Post.objects.all()
-#     serializer_class = PostSerializer
