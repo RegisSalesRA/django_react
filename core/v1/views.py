@@ -1,11 +1,11 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from core.v1.serializers import CategoriaSerializer, PostSerializer
 from core.models import Category, Post
 
 
 class PostListView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
