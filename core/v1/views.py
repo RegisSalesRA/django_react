@@ -1,7 +1,9 @@
+
 from rest_framework import generics
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from core.v1.serializers import CategoriaSerializer, PostSerializer
-from core.models import Category, Post
+from core.v1.serializers import CategoriaSerializer, PostSerializer, YouTubeScheduleSerializer
+from core.models import Category, Post, YouTubeSchedule
 
 
 class PostListView(generics.ListCreateAPIView):
@@ -23,3 +25,8 @@ class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Category.objects.all()
     serializer_class = CategoriaSerializer
+
+
+class ScheduleView(viewsets.ModelViewSet):
+    serializer_class = YouTubeScheduleSerializer
+    queryset = YouTubeSchedule.objects.all()

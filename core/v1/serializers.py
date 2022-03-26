@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Category, Post
+from core.models import Category, Post, YouTubeSchedule
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,3 +16,11 @@ class CategoriaSerializer(serializers.ModelSerializer):
         model = Category
         fields = ['id',
         'name']
+
+class YouTubeScheduleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = YouTubeSchedule
+        fields = ['id',
+        'title',
+        'description',
+        'completed']
