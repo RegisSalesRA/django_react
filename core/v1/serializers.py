@@ -1,26 +1,14 @@
 from rest_framework import serializers
-from core.models import Category, Post, YouTubeSchedule
+from core.models import Item, List
 
-class PostSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Post
-        fields = ['id',
-        'category',
-        'content',
-        'title',
-        'author',
-        'status']
 
-class CategoriaSerializer(serializers.ModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = ['id',
-        'name']
+        model = Item
+        fields = ['id','name','done']
 
-class YouTubeScheduleSerializer(serializers.ModelSerializer):
+class ListSerializer(serializers.ModelSerializer):
+    item_set = ItemSerializer(many=True)
     class Meta:
-        model = YouTubeSchedule
-        fields = ['id',
-        'title',
-        'description',
-        'completed']
+        model = List
+        fields = ['id','name','owner','item_set']

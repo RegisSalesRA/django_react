@@ -1,8 +1,5 @@
 from django.contrib import admin
-from core.models import Post,Category, YouTubeSchedule
+from core.models import List,Item
 
-# Register your models here.
-
-admin.site.register(Post)
-admin.site.register(Category)
-admin.site.register(YouTubeSchedule)
+admin.site.register(List)
+admin.site.register(Item)
