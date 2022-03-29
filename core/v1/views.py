@@ -6,9 +6,12 @@ from core.models import List, Item
 
 
 class ListView(generics.ListCreateAPIView):
-    queryset = List.objects.all()
     serializer_class = ListSerializer
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return List.objects.filter(owner=self.request.user)
+
 
 class ListDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = List.objects.all()
