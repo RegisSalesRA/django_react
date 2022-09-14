@@ -4,28 +4,25 @@ import {useDispatch, useSelector} from 'react-redux'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {listProductDetails} from '../actions/productActions'
 
 
-function ProductScreen({history}) { 
+function ProductScreen({ match, history }) { 
     const [qty, setQty] = useState(1)
-    const navigate = useNavigate() 
     const dispatch = useDispatch()
     const productDetails = useSelector(state => state.productDetails)
     const {error,loading, product} = productDetails
-    const { id } = useParams();
    
 
     useEffect(() => {
-        dispatch(listProductDetails(id))
-    },[dispatch,id])
+        dispatch(listProductDetails(match.params.id))
+    },[dispatch,match])
 
     // let product = {}
-
+    
     const addToCartHandler = () => {
-        navigate(`/cart/${id}?qty=${qty}`)
-        console.log("Add to cart: ",id)
+        history.push(`/cart/${match.params.id}?qty=${qty}`)
     }
 
     return (
