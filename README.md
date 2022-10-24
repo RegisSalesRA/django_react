@@ -10,7 +10,6 @@ Uma Revisão do projeto Django com React de um curso na Udemy
    - [📱 Screenshots](#Screenshots)
    - [👨🏽‍💻 Desenvolvimento](#Sobre-o-desenvolvimento)
    - [📲 Como Utilizar](#Como-Utilizar)
-   - [🛠 Ferramentas](#Packages-utilizadas)
 
    </p>
 
@@ -22,9 +21,9 @@ Um projeto usando backend em django utilizando django rest framework para uma ap
 
 <h2>Screenshots</h2>
 
-<img src="https://github.com/RegisSalesRA/Django_React/blob/master/readme/Screenshot%20from%202022-10-24%2017-21-07.png" > 
+<img src="https://github.com/RegisSalesRA/Django_React/blob/master/readme/home.png" > 
 
-<img src="https://github.com/RegisSalesRA/Django_React/blob/master/readme/Screenshot%20from%202022-10-24%2017-21-15.png" > 
+<img src="https://github.com/RegisSalesRA/Django_React/blob/master/readme/details.png" > 
 
 
 <p>
