@@ -13,10 +13,10 @@ Uma Revisão do projeto Django com React de um curso na Udemy
 
    </p>
 
-<h2>Sobre o App</h2>
+<h2>Sobre a aplicacao</h2>
 
 <p>
-Um projeto usando backend em django utilizando django rest framework para uma aplicação frontend React consumir e mostrar os dados
+Um projeto que simula uma forma de E-commerce
 </p>
 
 <h2>Screenshots</h2>
@@ -31,7 +31,7 @@ Um projeto usando backend em django utilizando django rest framework para uma ap
 
 <h2>Sobre o desenvolvimento</h2>
 
-<img src="https://img.shields.io/badge/Django Version-3.3.2-blue"> <img src="https://img.shields.io/badge/Python Version-2.18.1-blueviolet"> <img src="https://img.shields.io/badge/React version-11.0.16-yellowgreen">
+<img src="https://img.shields.io/badge/Django Version-4.4.1-brightgreen"> <img src="https://img.shields.io/badge/Python Version-3.8.10-green"> <img src="https://img.shields.io/badge/Node version-18.2.0-yellowgreen">
  
 <p>
 Desenvolvimento focado em mostrar como uma applicação é feita tanto no backend quanto no frontend
