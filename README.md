@@ -1,6 +1,5 @@
 # Django and React
 
-Uma Revisão do projeto Django com React de um curso na Udemy
 
 <h2>Índice 📋</h2>
 
@@ -16,7 +15,7 @@ Uma Revisão do projeto Django com React de um curso na Udemy
 <h2>Sobre a aplicacao</h2>
 
 <p>
-Um projeto que simula uma forma de E-commerce
+Um projeto para simular de forma pratica E-commerce de uma loja virtual
 </p>
 
 <h2>Screenshots</h2>
@@ -34,7 +33,7 @@ Um projeto que simula uma forma de E-commerce
 <img src="https://img.shields.io/badge/Django Version-4.4.1-brightgreen"> <img src="https://img.shields.io/badge/Python Version-3.8.10-green"> <img src="https://img.shields.io/badge/Node version-18.2.0-yellowgreen">
  
 <p>
-Desenvolvimento focado em mostrar como uma applicação é feita tanto no backend quanto no frontend
+Desenvolvimento do projeto criado com backend em django onde consigo construir as apis para consumo no frontend em React
 </p>
 
 
@@ -64,10 +63,6 @@ $ React
 -  npm run serve
 
 ```
-
-</p>
- 
-<p>
 
 
 <p align="center">
